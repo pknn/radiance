@@ -1,3 +1,3 @@
-export interface Version {
+export interface VersionPresenter {
   version_number: string;
 }

@@ -4,7 +4,7 @@
   "description": "Backend API for event platform",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=test jest",
     "compile": "tsc",
     "dev": "nodemon --config nodemon.json src/index.ts",
     "dev:debug": "npm run dev -- --inspect-brk",
@@ -26,9 +26,15 @@
     "@types/cors": "^2.8.9",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.20",
     "@types/morgan": "^1.9.2",
     "@types/node": "^14.14.22",
+    "@types/supertest": "^2.0.10",
+    "cross-env": "^7.0.3",
+    "jest": "^26.6.3",
     "nodemon": "^2.0.7",
+    "supertest": "^6.1.2",
+    "ts-jest": "^26.4.4",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { Version as VersionPresenter } from "../presenters/Version";
+import { VersionPresenter as VersionPresenter } from "../presenters/Version";
 
 export const get = (_: Request, response: Response) => {
   const presenter: VersionPresenter = {
