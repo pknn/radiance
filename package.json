@@ -16,12 +16,14 @@
   "license": "MIT",
   "dependencies": {
     "consola": "^2.15.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "logrocket": "^1.0.14",
+    "helmet": "^4.4.1",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.9",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.11",
     "@types/morgan": "^1.9.2",
