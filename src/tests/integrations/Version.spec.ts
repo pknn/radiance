@@ -1,4 +1,4 @@
-import { api, Request, Response } from "./Tester";
+import { api, Response } from "./Tester";
 
 interface VersionResponseBody {
   version_number: string;
