@@ -141,11 +141,6 @@
         "signature": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
         "affectsGlobalScope": true
       },
-      "./node_modules/tslib/tslib.d.ts": {
-        "version": "4576b4e61049f5ffd7c9e935cf88832e089265bdb15ffc35077310042cbbbeea",
-        "signature": "4576b4e61049f5ffd7c9e935cf88832e089265bdb15ffc35077310042cbbbeea",
-        "affectsGlobalScope": false
-      },
       "./node_modules/@types/node/globals.d.ts": {
         "version": "215d8d9a2c480fd460127edc048d68d9931d3b27f95132253a6e71975f060bb1",
         "signature": "215d8d9a2c480fd460127edc048d68d9931d3b27f95132253a6e71975f060bb1",
@@ -586,7 +581,7 @@
         "signature": "dd310d3a44bea1182435c232d80d6e4fe54b096d28e8c2c4fc586de8def7479e",
         "affectsGlobalScope": false
       },
-      "./src/persists/index.ts": {
+      "./src/persists/events/index.ts": {
         "version": "7b2df31450be96533c53d6ffe76ecf9dbafd34d303b18f89fadd5a139f1492e6",
         "signature": "ac77986dca4fc8a8bf450df15105b542528ad224a145334a3ede6e56cc15a7f6",
         "affectsGlobalScope": false
@@ -597,22 +592,22 @@
         "affectsGlobalScope": false
       },
       "./src/models/event.ts": {
-        "version": "e2d2e7c267a41ccf282955c85257d523ccf5aff5fda7201197ac21e43708af2f",
-        "signature": "18aa3f5eac2c40044e0045bea27f97d349a5b85743d63bdab900008b94c2d868",
+        "version": "721dfb175b790d91231160d3cf7c567960bb91df81d8bb461c16d98cb6a6a65d",
+        "signature": "5086d8aa7aace0c50f872df81a74ca9e84163099406a50fa4c901cf729e09a6e",
         "affectsGlobalScope": false
       },
-      "./src/persists/event.ts": {
-        "version": "d87998641798c9a817bb3daf20579b7ea28eaf72c71f213a27f3925eaf250caf",
-        "signature": "7c45297961fe2c26e246dbe64aef25f3d0930ae175bfc0841f2ee6e5126cef42",
+      "./src/persists/events/event.ts": {
+        "version": "3db6cee7448139af60007b58c7407275b42ddab064d73d5e629e200737541829",
+        "signature": "c945edbc8e6b05dc76b60df0afa7afa8888c97a65274b3e55f7b5c292707d709",
         "affectsGlobalScope": false
       },
       "./src/usecases/event.ts": {
-        "version": "28eae1159299866db684e54972e12f4b550491430afe8dc72eb6a483f27b3341",
+        "version": "4f3ad9910975bfbe75454596bde8b2d9ce7c01ee94e7a56d9b38e3430772e91e",
         "signature": "05fd52dba36c81c04ad383a4871e14eb147fcf8841311eb97c950254bdf0d8f7",
         "affectsGlobalScope": false
       },
       "./src/controllers/event.ts": {
-        "version": "1b23ad9d08794892c5d5e2d94a68f9ea7fea0a587ba8a00b0977f5ae17a9ff6f",
+        "version": "053b392dc2664ed8b19f6fe0db2e42536c1d72013e390134f386ef57a889d746",
         "signature": "f478aaee3e05c14b87f168a9387d8030505bbaf78962ebd0865e73427d73356d",
         "affectsGlobalScope": false
       },
@@ -801,7 +796,6 @@
       ],
       "outDir": "./dist",
       "rootDir": "./src",
-      "importHelpers": true,
       "strict": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
@@ -1183,87 +1177,66 @@
         "./node_modules/@types/morgan/index.d.ts",
         "./node_modules/dotenv/types/index.d.ts",
         "./node_modules/helmet/dist/index.d.ts",
-        "./node_modules/tslib/tslib.d.ts",
         "./src/routes/index.ts"
       ],
       "./src/configs/pg.ts": [
         "./node_modules/@types/pg/index.d.ts",
-        "./node_modules/consola/types/consola.d.ts",
-        "./node_modules/tslib/tslib.d.ts"
+        "./node_modules/consola/types/consola.d.ts"
       ],
       "./src/controllers/event.ts": [
         "./node_modules/@types/express/index.d.ts",
-        "./node_modules/tslib/tslib.d.ts",
         "./src/usecases/event.ts"
       ],
       "./src/controllers/version.ts": [
         "./node_modules/@types/express/index.d.ts",
-        "./node_modules/tslib/tslib.d.ts",
         "./src/presenters/version.ts"
       ],
       "./src/index.ts": [
         "./node_modules/@types/express/index.d.ts",
         "./node_modules/consola/types/consola.d.ts",
-        "./node_modules/tslib/tslib.d.ts",
         "./src/configs/index.ts"
       ],
       "./src/models/event.ts": [
-        "./node_modules/tslib/tslib.d.ts",
-        "./src/persists/index.ts",
+        "./src/persists/events/index.ts",
         "./src/presenters/event.ts"
       ],
-      "./src/persists/event.ts": [
-        "./node_modules/tslib/tslib.d.ts",
+      "./src/persists/events/event.ts": [
         "./node_modules/zapatos/db.d.ts",
         "./src/configs/pg.ts",
         "./src/models/event.ts"
       ],
-      "./src/persists/index.ts": [
-        "./node_modules/tslib/tslib.d.ts",
+      "./src/persists/events/index.ts": [
         "./src/persists/zapatos/schema.d.ts"
       ],
       "./src/persists/zapatos/schema.d.ts": [
         "./node_modules/zapatos/db.d.ts"
       ],
-      "./src/presenters/event.ts": [
-        "./node_modules/tslib/tslib.d.ts"
-      ],
-      "./src/presenters/version.ts": [
-        "./node_modules/tslib/tslib.d.ts"
-      ],
       "./src/routes/event.ts": [
         "./node_modules/@types/express/index.d.ts",
-        "./node_modules/tslib/tslib.d.ts",
         "./src/controllers/event.ts"
       ],
       "./src/routes/index.ts": [
         "./node_modules/@types/express/index.d.ts",
-        "./node_modules/tslib/tslib.d.ts",
         "./src/routes/event.ts",
         "./src/routes/version.ts"
       ],
       "./src/routes/version.ts": [
         "./node_modules/@types/express/index.d.ts",
-        "./node_modules/tslib/tslib.d.ts",
         "./src/controllers/version.ts"
       ],
       "./src/tests/integrations/tester/index.ts": [
         "./node_modules/@types/supertest/index.d.ts",
-        "./node_modules/tslib/tslib.d.ts",
         "./src/configs/index.ts"
       ],
       "./src/tests/integrations/version.spec.ts": [
-        "./node_modules/tslib/tslib.d.ts",
         "./src/tests/integrations/tester/index.ts"
       ],
       "./src/tests/units/presenters/versionpresenter.spec.ts": [
-        "./node_modules/tslib/tslib.d.ts",
         "./src/presenters/version.ts"
       ],
       "./src/usecases/event.ts": [
-        "./node_modules/tslib/tslib.d.ts",
         "./src/models/event.ts",
-        "./src/persists/event.ts"
+        "./src/persists/events/event.ts"
       ]
     },
     "exportedModulesMap": {
@@ -1644,13 +1617,13 @@
         "./node_modules/@types/express/index.d.ts"
       ],
       "./src/models/event.ts": [
-        "./src/persists/index.ts",
+        "./src/persists/events/index.ts",
         "./src/presenters/event.ts"
       ],
-      "./src/persists/event.ts": [
+      "./src/persists/events/event.ts": [
         "./src/models/event.ts"
       ],
-      "./src/persists/index.ts": [
+      "./src/persists/events/index.ts": [
         "./src/persists/zapatos/schema.d.ts"
       ],
       "./src/persists/zapatos/schema.d.ts": [
@@ -1773,7 +1746,6 @@
       "./node_modules/pg-types/index.d.ts",
       "./node_modules/pretty-format/build/index.d.ts",
       "./node_modules/pretty-format/build/types.d.ts",
-      "./node_modules/tslib/tslib.d.ts",
       "./node_modules/typescript/lib/lib.dom.d.ts",
       "./node_modules/typescript/lib/lib.es2015.collection.d.ts",
       "./node_modules/typescript/lib/lib.es2015.core.d.ts",
@@ -1819,8 +1791,8 @@
       "./src/index.ts",
       "./src/models/event.ts",
       "./src/models/index.ts",
-      "./src/persists/event.ts",
-      "./src/persists/index.ts",
+      "./src/persists/events/event.ts",
+      "./src/persists/events/index.ts",
       "./src/persists/zapatos/schema.d.ts",
       "./src/presenters/event.ts",
       "./src/presenters/version.ts",
