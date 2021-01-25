@@ -8,9 +8,12 @@ import Router from "../routes/index";
 
 export const App = (): Express => {
   Dotenv.config();
-  Morgan(process.env.NODE_ENV === "development" ? "combined" : "short");
   return express()
-    .use(Morgan(process.env.NODE_ENV === "development" ? "combined" : "short"))
+    .use(
+      Morgan(process.env.NODE_ENV === "development" ? "dev" : "short", {
+        skip: () => process.env.NODE_ENV === "test",
+      })
+    )
     .use(Helmet())
     .use(json())
     .use(urlencoded({ extended: true }))

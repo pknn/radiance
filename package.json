@@ -4,7 +4,7 @@
   "description": "Backend API for event platform",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "cross-env NODE_ENV=test jest",
     "compile": "tsc",
     "dev": "nodemon --config nodemon.json src/index.ts",
     "dev:debug": "npm run dev -- --inspect-brk",
@@ -30,6 +30,7 @@
     "@types/morgan": "^1.9.2",
     "@types/node": "^14.14.22",
     "@types/supertest": "^2.0.10",
+    "cross-env": "^7.0.3",
     "jest": "^26.6.3",
     "nodemon": "^2.0.7",
     "supertest": "^6.1.2",
