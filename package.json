@@ -1,0 +1,27 @@
+{
+  "name": "radiance",
+  "version": "1.0.0",
+  "description": "Backend API for event platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc",
+    "dev": "nodemon --config nodemon.json src/index.ts",
+    "dev:debug": "npm run dev -- --inspect-brk",
+    "clean": "rm -rf dist",
+    "prestart": "npm run clean && tsc",
+    "start": "node dist"
+  },
+  "author": "Pakanon Pantisawat",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.22",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
