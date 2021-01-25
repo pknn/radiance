@@ -1,5 +1,5 @@
 --! Previous: -
---! Hash: sha1:07fc856deb8cf39fcc7d3a3137b1fd60b1196db1
+--! Hash: sha1:bc3e30f6ea4592d69e67d4e1ea6dc107180bf6be
 
 -- Enter migration here
 
@@ -9,7 +9,7 @@ create table events (
   id uuid primary key default uuid_generate_v4(),
   title varchar(500) not null,
   description varchar(500) not null,
-  details json not null,
+  details text not null,
   location_name varchar(255) not null,
   capacity smallint not null,
   latitude decimal,
