@@ -32,9 +32,10 @@ declare module 'zapatos/schema' {
     export interface Selectable {
       id: string;
       title: string;
-      description: string | null;
-      details: db.JSONValue | null;
-      location_name: string | null;
+      description: string;
+      details: db.JSONValue;
+      location_name: string;
+      capacity: number;
       latitude: number | null;
       longitude: number | null;
       facebook_link: string | null;
@@ -47,6 +48,7 @@ declare module 'zapatos/schema' {
       description?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
       details?: db.JSONValue | db.Parameter<db.JSONValue> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, db.JSONValue | db.Parameter<db.JSONValue> | db.SQLFragment | db.ParentColumn>;
       location_name?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      capacity?: number | db.Parameter<number> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, number | db.Parameter<number> | db.SQLFragment | db.ParentColumn>;
       latitude?: number | db.Parameter<number> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, number | db.Parameter<number> | db.SQLFragment | db.ParentColumn>;
       longitude?: number | db.Parameter<number> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, number | db.Parameter<number> | db.SQLFragment | db.ParentColumn>;
       facebook_link?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
@@ -56,9 +58,10 @@ declare module 'zapatos/schema' {
     export interface Insertable {
       id?: string | db.Parameter<string> | db.DefaultType | db.SQLFragment;
       title: string | db.Parameter<string> | db.SQLFragment;
-      description?: string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment;
-      details?: db.JSONValue | db.Parameter<db.JSONValue> | null | db.DefaultType | db.SQLFragment;
-      location_name?: string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment;
+      description: string | db.Parameter<string> | db.SQLFragment;
+      details: db.JSONValue | db.Parameter<db.JSONValue> | db.SQLFragment;
+      location_name: string | db.Parameter<string> | db.SQLFragment;
+      capacity: number | db.Parameter<number> | db.SQLFragment;
       latitude?: number | db.Parameter<number> | null | db.DefaultType | db.SQLFragment;
       longitude?: number | db.Parameter<number> | null | db.DefaultType | db.SQLFragment;
       facebook_link?: string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment;
@@ -68,9 +71,10 @@ declare module 'zapatos/schema' {
     export interface Updatable {
       id?: string | db.Parameter<string> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.DefaultType | db.SQLFragment>;
       title?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
-      description?: string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment>;
-      details?: db.JSONValue | db.Parameter<db.JSONValue> | null | db.DefaultType | db.SQLFragment | db.SQLFragment<any, db.JSONValue | db.Parameter<db.JSONValue> | null | db.DefaultType | db.SQLFragment>;
-      location_name?: string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment>;
+      description?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      details?: db.JSONValue | db.Parameter<db.JSONValue> | db.SQLFragment | db.SQLFragment<any, db.JSONValue | db.Parameter<db.JSONValue> | db.SQLFragment>;
+      location_name?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      capacity?: number | db.Parameter<number> | db.SQLFragment | db.SQLFragment<any, number | db.Parameter<number> | db.SQLFragment>;
       latitude?: number | db.Parameter<number> | null | db.DefaultType | db.SQLFragment | db.SQLFragment<any, number | db.Parameter<number> | null | db.DefaultType | db.SQLFragment>;
       longitude?: number | db.Parameter<number> | null | db.DefaultType | db.SQLFragment | db.SQLFragment<any, number | db.Parameter<number> | null | db.DefaultType | db.SQLFragment>;
       facebook_link?: string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment>;
