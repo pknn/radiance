@@ -4,10 +4,11 @@ import Morgan from "morgan";
 import Helmet from "helmet";
 import CORS from "cors";
 
+Dotenv.config();
+
 import Router from "../routes/index";
 
 export const App = (): Express => {
-  Dotenv.config();
   return express()
     .use(
       Morgan(process.env.NODE_ENV === "development" ? "dev" : "short", {
