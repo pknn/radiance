@@ -13,7 +13,7 @@ export const init = (express: () => Express): Express => {
     .use(Morgan(process.env.NODE_ENV === "development" ? "combined" : "short"))
     .use(Helmet())
     .use(json())
-    .use(CORS())
     .use(urlencoded({ extended: true }))
+    .use(CORS())
     .use("/api", Router);
 };
