@@ -1,6 +1,5 @@
 /// <references path="index.ts" />
 
-import { image } from "faker";
 import { Insertable, Selectable } from "../persists/events";
 import { DetailComponentPresenter, EventPresenter, ImageComponentPresenter, TextComponentPresenter } from "../presenters/Event";
 

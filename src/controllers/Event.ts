@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+
 import { getEvent } from "./../useCases/Event";
 
 export const get = async (request: Request, response: Response) => {
