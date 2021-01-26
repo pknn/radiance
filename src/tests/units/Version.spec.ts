@@ -1,4 +1,4 @@
-import { VersionPresenter } from "../../../presenters/Version";
+import { VersionPresenter } from "../../presenters/Version";
 
 let versionPresenter: VersionPresenter;
 
