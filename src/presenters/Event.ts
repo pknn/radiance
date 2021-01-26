@@ -1,3 +1,5 @@
+import { TextComponentStyle } from '../models/Event'
+
 export interface EventPresenter {
   title: string;
   description: string;
@@ -10,16 +12,13 @@ export interface EventPresenter {
   website_link?: string;
 }
 
-export type DetailComponentPresenter =
-  | ImageComponentPresenter
-  | TextComponentPresenter;
+export abstract class DetailComponentPresenter { }
 
-export interface ImageComponentPresenter {
+export interface ImageComponentPresenter extends DetailComponentPresenter {
   image_url: string;
 }
 
-export type TextComponentStyle = "heading" | "subheading" | "body" | "quote";
-export interface TextComponentPresenter {
+export interface TextComponentPresenter extends DetailComponentPresenter {
   style: TextComponentStyle;
   content: string;
 }

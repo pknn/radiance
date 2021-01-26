@@ -1,7 +1,8 @@
 /// <references path="index.ts" />
 
+import { image } from "faker";
 import { Insertable, Selectable } from "../persists/events";
-import { EventPresenter, DetailComponentPresenter } from "../presenters/Event";
+import { DetailComponentPresenter, EventPresenter, ImageComponentPresenter, TextComponentPresenter } from "../presenters/Event";
 
 export class EventModel {
   title: string;
@@ -55,22 +56,7 @@ export class EventModel {
     return {
       title: this.title,
       description: this.description,
-      details: this.details.map((detailComponent) => {
-        let presenter: DetailComponentPresenter;
-        switch (detailComponent.type) {
-          case "image":
-            presenter = {
-              image_url: detailComponent.imageUrl,
-            };
-            return presenter;
-          case "text":
-            presenter = {
-              style: detailComponent.style,
-              content: detailComponent.content,
-            };
-            return presenter;
-        }
-      }),
+      details: this.details.map(detail => detail.toPresenter()),
       capacity: this.capacity,
       location_name: this.locationName,
       geolocation: this.geolocation,
@@ -98,18 +84,41 @@ export class EventModel {
   }
 }
 
-export type DetailComponent = ImageComponent | TextComponent;
+export abstract class DetailComponent {
+  abstract toPresenter(): DetailComponentPresenter
+}
 
-export interface ImageComponent {
-  type: "image";
+export class ImageComponent extends DetailComponent {
   imageUrl: string;
+  constructor(imageUrl: string) {
+    super()
+    this.imageUrl = imageUrl
+  }
+
+  toPresenter(): ImageComponentPresenter {
+    return {
+      image_url: this.imageUrl
+    }
+  }
 }
 
 export type TextComponentStyle = "heading" | "subheading" | "body" | "quote";
-export interface TextComponent {
-  type: "text";
+export class TextComponent extends DetailComponent {
   style: TextComponentStyle;
   content: string;
+
+  constructor(style: TextComponentStyle, content: string) {
+    super()
+    this.style = style
+    this.content = content
+  }
+
+  toPresenter(): TextComponentPresenter {
+    return {
+      style: this.style,
+      content: this.content
+    }
+  }
 }
 
 export interface Geolocation {
