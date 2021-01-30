@@ -1,6 +1,4 @@
-import { expectCt } from "helmet";
-import { version } from "os";
-import { VersionPresenter } from "../../../presenters/Version";
+import { VersionPresenter } from "../../presenters/Version";
 
 let versionPresenter: VersionPresenter;
 

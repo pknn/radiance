@@ -1,4 +1,4 @@
-import { api, Request, Response } from "./Tester";
+import { api, Response } from "./Tester";
 
 interface VersionResponseBody {
   version_number: string;
@@ -6,7 +6,7 @@ interface VersionResponseBody {
 
 const urlEndpoint = "/api/version";
 
-describe("Version API Endpoint [/api/version]", () => {
+describe("/api/version", () => {
   describe("GET /", () => {
     it("should be success and return response", async () => {
       const expectedResponseBody: VersionResponseBody = {
