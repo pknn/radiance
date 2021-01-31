@@ -17,6 +17,8 @@ module.exports = {
   ],
   rules: {
     'import/extensions': 0,
+    'max-classes-per-file': 0,
+    camelcase: 0,
   },
   settings: {
     'import/resolver': {

@@ -11,6 +11,8 @@
     "clean": "rm -rf dist",
     "schema:generate": "npx zapatos",
     "prestart": "npm run clean && tsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "start": "node dist"
   },
   "author": "Pakanon Pantisawat",
