@@ -516,6 +516,26 @@
         "signature": "c106970ee4b686b5ebf0964ea4e0d1b2af02bdecd2d5cfeecedeb7bb5b2f404b",
         "affectsGlobalScope": false
       },
+      "./src/persists/events/index.ts": {
+        "version": "7b2df31450be96533c53d6ffe76ecf9dbafd34d303b18f89fadd5a139f1492e6",
+        "signature": "ac77986dca4fc8a8bf450df15105b542528ad224a145334a3ede6e56cc15a7f6",
+        "affectsGlobalScope": false
+      },
+      "./src/presenters/event.ts": {
+        "version": "7bfb2018985757ea2898ffb0ca2a566b2f2aa87e0ab7ced08a757b3a2b774025",
+        "signature": "90e37f3e514204605b6e2ca9cc4ec375912edcba4897e947ff538237ecaa0ac6",
+        "affectsGlobalScope": false
+      },
+      "./src/models/event.ts": {
+        "version": "2cf63eb6de66e9f332adc312619599754a1c1f435e1b108ed5199ebc82d4b87b",
+        "signature": "2cacb434ff30e1a9a19c4166f50611b7eb9b0cc42ce67f0173e130169e7d44a7",
+        "affectsGlobalScope": false
+      },
+      "./src/bodies/event.ts": {
+        "version": "12b064d2cc46553efdc02dda99425fd8f2806f480d505580033aac8f71cae61f",
+        "signature": "916f107424157eacc423d0014d38dca980676d23132418207a1d0bf106f837e4",
+        "affectsGlobalScope": false
+      },
       "./node_modules/zapatos/dist/db/canary.d.ts": {
         "version": "4f71acad1f1fcf34b7b2686ff56209cf5a6d79d83d24941688673c7459f0cc44",
         "signature": "4f71acad1f1fcf34b7b2686ff56209cf5a6d79d83d24941688673c7459f0cc44",
@@ -577,38 +597,23 @@
         "affectsGlobalScope": false
       },
       "./src/configs/pg.ts": {
-        "version": "9eaec31562d99265090936d4e9555fd062ef042c66aa1363b9f137043cb6a204",
+        "version": "9e4b41c1225b96d6e65dc780491544ad3f8b67dfbfee8f0cb80c68ad4be4332a",
         "signature": "dd310d3a44bea1182435c232d80d6e4fe54b096d28e8c2c4fc586de8def7479e",
         "affectsGlobalScope": false
       },
-      "./src/persists/events/index.ts": {
-        "version": "7b2df31450be96533c53d6ffe76ecf9dbafd34d303b18f89fadd5a139f1492e6",
-        "signature": "ac77986dca4fc8a8bf450df15105b542528ad224a145334a3ede6e56cc15a7f6",
-        "affectsGlobalScope": false
-      },
-      "./src/presenters/event.ts": {
-        "version": "134dc4d61e38f1d83b29f342128490eff304cf0478c056719aa625fbd7a056d7",
-        "signature": "c479a659e403700335e2cfa84693298eb7ed811fd528c6bef68ab9a350e3f9b8",
-        "affectsGlobalScope": false
-      },
-      "./src/models/event.ts": {
-        "version": "721dfb175b790d91231160d3cf7c567960bb91df81d8bb461c16d98cb6a6a65d",
-        "signature": "5086d8aa7aace0c50f872df81a74ca9e84163099406a50fa4c901cf729e09a6e",
-        "affectsGlobalScope": false
-      },
       "./src/persists/events/event.ts": {
-        "version": "3db6cee7448139af60007b58c7407275b42ddab064d73d5e629e200737541829",
-        "signature": "c945edbc8e6b05dc76b60df0afa7afa8888c97a65274b3e55f7b5c292707d709",
+        "version": "cb22d7cd60cc218c47d4c91d593aab2ebb4aed1beb946bc8b435d4cfbe1feecd",
+        "signature": "f2f02a6be0de96e5b9d5d8620d282d2784059e3ff95adc3564e76d4b9dc3baad",
         "affectsGlobalScope": false
       },
       "./src/usecases/event.ts": {
-        "version": "4f3ad9910975bfbe75454596bde8b2d9ce7c01ee94e7a56d9b38e3430772e91e",
-        "signature": "05fd52dba36c81c04ad383a4871e14eb147fcf8841311eb97c950254bdf0d8f7",
+        "version": "c95ae74083c3e498f76e3049f94403a8f3af3c59b296a4d5455e301ae2402480",
+        "signature": "647a144c7eba2caea5e3f8486f8b120fb358d8da0b04efd5a5687385afb38bba",
         "affectsGlobalScope": false
       },
       "./src/controllers/event.ts": {
-        "version": "053b392dc2664ed8b19f6fe0db2e42536c1d72013e390134f386ef57a889d746",
-        "signature": "f478aaee3e05c14b87f168a9387d8030505bbaf78962ebd0865e73427d73356d",
+        "version": "4480ef8d2cd781c88051c04a56871b9019c5943202f88ad77cd89d985dc46a55",
+        "signature": "925558355835034eaa89a793a7a16dc0e0764b11175e380812f23c949a40f53e",
         "affectsGlobalScope": false
       },
       "./src/routes/event.ts": {
@@ -627,7 +632,7 @@
         "affectsGlobalScope": false
       },
       "./src/index.ts": {
-        "version": "2348634c591f1cc9ba40dff5619db45c962ccd768dce1962cb441cd9a8432674",
+        "version": "d3bb066c353d02e35767aced1c70371f0519a480d1cfd98f45db8071614d9326",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
@@ -639,6 +644,16 @@
       "./src/persists/zapatos/schema.d.ts": {
         "version": "5deba58229272d4050da81bc0acd72b7215c75073651db061341050d2a0a50df",
         "signature": "5deba58229272d4050da81bc0acd72b7215c75073651db061341050d2a0a50df",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/faker/index.d.ts": {
+        "version": "5ddf1c1c220a206c584a71cbbedc1a85e25d75bcfadd875a41cee362713f01dd",
+        "signature": "5ddf1c1c220a206c584a71cbbedc1a85e25d75bcfadd875a41cee362713f01dd",
+        "affectsGlobalScope": true
+      },
+      "./src/tests/helpers/fakers/event.ts": {
+        "version": "481c76f09a2faaffb34f34977c972ceed40503e684c24a318c68920d4dcda070",
+        "signature": "2d41bedef4ec1d8e913f13b4d60a4879e8f41b222e2df4b4dc0c6792596db9b0",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/cookiejar/index.d.ts": {
@@ -662,12 +677,17 @@
         "affectsGlobalScope": false
       },
       "./src/tests/integrations/version.spec.ts": {
-        "version": "e6ccf74e7a8d66a2143e3b7511ec7a8d0bf2c989366b2974bc93f415df2901a8",
+        "version": "98114900ecec35b44b44e5053d7e315bb70cca6c36d75573d4ce664ef7780655",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
-      "./src/tests/units/presenters/versionpresenter.spec.ts": {
-        "version": "e1001e75f3f26c95f3bbd8234babe5aff7f361ea7d188724a7840689bfa5051a",
+      "./src/tests/units/event.spec.ts": {
+        "version": "8761be131b9d2999829afa568a21eaf7ceb1a27be206bcb896dd8287ad309691",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "affectsGlobalScope": false
+      },
+      "./src/tests/units/version.spec.ts": {
+        "version": "ad79398fec609f6139c76560ee564cb4df691db4e3ac3d0bdfa44b1bb2e9408d",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
@@ -1171,6 +1191,9 @@
       "./node_modules/zapatos/dist/db/transaction.d.ts": [
         "./node_modules/@types/pg/index.d.ts"
       ],
+      "./src/bodies/event.ts": [
+        "./src/models/event.ts"
+      ],
       "./src/configs/index.ts": [
         "./node_modules/@types/cors/index.d.ts",
         "./node_modules/@types/express/index.d.ts",
@@ -1185,6 +1208,7 @@
       ],
       "./src/controllers/event.ts": [
         "./node_modules/@types/express/index.d.ts",
+        "./src/bodies/event.ts",
         "./src/usecases/event.ts"
       ],
       "./src/controllers/version.ts": [
@@ -1197,6 +1221,7 @@
         "./src/configs/index.ts"
       ],
       "./src/models/event.ts": [
+        "./src/bodies/event.ts",
         "./src/persists/events/index.ts",
         "./src/presenters/event.ts"
       ],
@@ -1211,6 +1236,9 @@
       "./src/persists/zapatos/schema.d.ts": [
         "./node_modules/zapatos/db.d.ts"
       ],
+      "./src/presenters/event.ts": [
+        "./src/models/event.ts"
+      ],
       "./src/routes/event.ts": [
         "./node_modules/@types/express/index.d.ts",
         "./src/controllers/event.ts"
@@ -1224,6 +1252,12 @@
         "./node_modules/@types/express/index.d.ts",
         "./src/controllers/version.ts"
       ],
+      "./src/tests/helpers/fakers/event.ts": [
+        "./node_modules/@types/faker/index.d.ts",
+        "./src/bodies/event.ts",
+        "./src/models/event.ts",
+        "./src/persists/events/index.ts"
+      ],
       "./src/tests/integrations/tester/index.ts": [
         "./node_modules/@types/supertest/index.d.ts",
         "./src/configs/index.ts"
@@ -1231,10 +1265,19 @@
       "./src/tests/integrations/version.spec.ts": [
         "./src/tests/integrations/tester/index.ts"
       ],
-      "./src/tests/units/presenters/versionpresenter.spec.ts": [
+      "./src/tests/units/event.spec.ts": [
+        "./node_modules/zapatos/db.d.ts",
+        "./src/bodies/event.ts",
+        "./src/models/event.ts",
+        "./src/persists/events/index.ts",
+        "./src/presenters/event.ts",
+        "./src/tests/helpers/fakers/event.ts"
+      ],
+      "./src/tests/units/version.spec.ts": [
         "./src/presenters/version.ts"
       ],
       "./src/usecases/event.ts": [
+        "./src/bodies/event.ts",
         "./src/models/event.ts",
         "./src/persists/events/event.ts"
       ]
@@ -1604,6 +1647,9 @@
       "./node_modules/zapatos/dist/db/transaction.d.ts": [
         "./node_modules/@types/pg/index.d.ts"
       ],
+      "./src/bodies/event.ts": [
+        "./src/models/event.ts"
+      ],
       "./src/configs/index.ts": [
         "./node_modules/@types/express/index.d.ts"
       ],
@@ -1617,6 +1663,7 @@
         "./node_modules/@types/express/index.d.ts"
       ],
       "./src/models/event.ts": [
+        "./src/bodies/event.ts",
         "./src/persists/events/index.ts",
         "./src/presenters/event.ts"
       ],
@@ -1629,6 +1676,9 @@
       "./src/persists/zapatos/schema.d.ts": [
         "./node_modules/zapatos/db.d.ts"
       ],
+      "./src/presenters/event.ts": [
+        "./src/models/event.ts"
+      ],
       "./src/routes/event.ts": [
         "./node_modules/@types/express/index.d.ts"
       ],
@@ -1638,10 +1688,16 @@
       "./src/routes/version.ts": [
         "./node_modules/@types/express-serve-static-core/index.d.ts"
       ],
+      "./src/tests/helpers/fakers/event.ts": [
+        "./src/bodies/event.ts",
+        "./src/models/event.ts",
+        "./src/persists/events/index.ts"
+      ],
       "./src/tests/integrations/tester/index.ts": [
         "./node_modules/@types/supertest/index.d.ts"
       ],
       "./src/usecases/event.ts": [
+        "./src/bodies/event.ts",
         "./src/models/event.ts"
       ]
     },
@@ -1658,6 +1714,7 @@
       "./node_modules/@types/cors/index.d.ts",
       "./node_modules/@types/express-serve-static-core/index.d.ts",
       "./node_modules/@types/express/index.d.ts",
+      "./node_modules/@types/faker/index.d.ts",
       "./node_modules/@types/graceful-fs/index.d.ts",
       "./node_modules/@types/istanbul-lib-coverage/index.d.ts",
       "./node_modules/@types/istanbul-lib-report/index.d.ts",
@@ -1784,6 +1841,7 @@
       "./node_modules/zapatos/dist/db/shortcuts.d.ts",
       "./node_modules/zapatos/dist/db/transaction.d.ts",
       "./node_modules/zapatos/dist/db/utils.d.ts",
+      "./src/bodies/event.ts",
       "./src/configs/index.ts",
       "./src/configs/pg.ts",
       "./src/controllers/event.ts",
@@ -1799,9 +1857,11 @@
       "./src/routes/event.ts",
       "./src/routes/index.ts",
       "./src/routes/version.ts",
+      "./src/tests/helpers/fakers/event.ts",
       "./src/tests/integrations/tester/index.ts",
       "./src/tests/integrations/version.spec.ts",
-      "./src/tests/units/presenters/versionpresenter.spec.ts",
+      "./src/tests/units/event.spec.ts",
+      "./src/tests/units/version.spec.ts",
       "./src/usecases/event.ts"
     ]
   },

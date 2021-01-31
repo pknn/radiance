@@ -1,5 +1,6 @@
 /// <references path="index.ts" />
 
+import { EventCreateRequestBody } from "../bodies/Event";
 import { Insertable, Selectable } from "../persists/events";
 import { DetailComponentPresenter, EventPresenter, ImageComponentPresenter, TextComponentPresenter } from "../presenters/Event";
 
@@ -80,6 +81,20 @@ export class EventModel {
       event.instagram_link || undefined,
       event.website_link || undefined
     );
+  }
+
+  static fromCreateRequestBody(requestBody: EventCreateRequestBody): EventModel {
+    return new EventModel(
+      requestBody.title,
+      requestBody.description,
+      requestBody.details.map(detail => detail.toDetailComponent()),
+      requestBody.capacity,
+      requestBody.location_name,
+      requestBody.geolocation,
+      requestBody.facebook_link,
+      requestBody.instagram_link,
+      requestBody.website_link
+    )
   }
 }
 

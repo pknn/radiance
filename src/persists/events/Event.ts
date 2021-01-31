@@ -10,3 +10,7 @@ export const createEvent = (event: Event) => {
 export const getEvent = (id: string) => {
   return db.selectOne("events", { id: id }).run(pool);
 };
+
+export const getEvents = () => {
+  return db.select("events", db.all).run(pool)
+};
