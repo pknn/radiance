@@ -8,7 +8,13 @@ import { createEvent, getEvent, getEvents } from '../useCases/Event';
 export const get = async (request: Request, response: Response) => {
   const { id } = request.params;
   if (!validateUUID(id)) {
-    response.status(400).json(RequestFieldInvalid([{ key: 'uuid', value: id }]));
+    response
+      .status(400)
+      .json(RequestFieldInvalid(
+        [
+          { key: 'uuid', value: id },
+        ],
+      ));
   } else {
     const event = await getEvent(id);
 
