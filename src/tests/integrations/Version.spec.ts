@@ -1,16 +1,16 @@
-import { api, Response } from "./Tester";
+import { api, Response } from './Tester';
 
 interface VersionResponseBody {
   version_number: string;
 }
 
-const urlEndpoint = "/api/version";
+const urlEndpoint = '/api/version';
 
-describe("/api/version", () => {
-  describe("GET /", () => {
-    it("should be success and return response", async () => {
+describe('/api/version', () => {
+  describe('GET /', () => {
+    it('should be success and return response', async () => {
       const expectedResponseBody: VersionResponseBody = {
-        version_number: "1.0.0",
+        version_number: '1.0.0',
       };
       const response: Response = await api.get(urlEndpoint);
 

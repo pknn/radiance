@@ -4,6 +4,7 @@
   "description": "Backend API for event platform",
   "main": "index.js",
   "scripts": {
+    "preinstall": "./scripts/init-hooks.sh",
     "test": "cross-env NODE_ENV=test jest",
     "compile": "tsc",
     "dev": "nodemon --config nodemon.json src/index.ts",
@@ -11,6 +12,8 @@
     "clean": "rm -rf dist",
     "schema:generate": "npx zapatos",
     "prestart": "npm run clean && tsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "start": "node dist"
   },
   "author": "Pakanon Pantisawat",
@@ -24,6 +27,7 @@
     "morgan": "^1.10.0",
     "pg": "^8.5.1",
     "tsyringe": "^4.4.0",
+    "uuid": "^8.3.2",
     "zapatos": "^3.3.0"
   },
   "devDependencies": {
@@ -36,14 +40,20 @@
     "@types/node": "^14.14.22",
     "@types/pg": "^7.14.9",
     "@types/supertest": "^2.0.10",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
     "cross-env": "^7.0.3",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
     "faker": "^5.2.0",
     "jest": "^26.6.3",
     "nodemon": "^2.0.7",
     "supertest": "^6.1.2",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.1.1",
-    "tslint": "^6.1.3",
     "typescript": "^4.1.3"
   }
 }

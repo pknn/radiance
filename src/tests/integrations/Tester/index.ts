@@ -3,12 +3,14 @@ import Supertest, {
   Test,
   Request as SuperTestRequest,
   Response as SuperTestResponse,
-} from "supertest";
+// eslint-disable-next-line import/no-extraneous-dependencies
+} from 'supertest';
 
-import { App } from "../../../configs";
+import App from '../../../configs';
 
 class Tester {
   api: SuperTest<Test>;
+
   constructor() {
     this.api = Supertest(App());
   }
@@ -16,4 +18,4 @@ class Tester {
 
 export type Request = SuperTestRequest;
 export type Response = SuperTestResponse;
-export const api: SuperTest<Test> = new Tester().api;
+export const { api } = new Tester();

@@ -1,16 +1,4 @@
-import { TextComponentStyle } from '../models/Event'
-
-export interface EventPresenter {
-  title: string;
-  description: string;
-  details: DetailComponentPresenter[];
-  capacity: number;
-  location_name: string;
-  geolocation?: GeolocationPresenter;
-  facebook_link?: string;
-  instagram_link?: string;
-  website_link?: string;
-}
+import { TextComponentStyle } from '../models/Event';
 
 export abstract class DetailComponentPresenter { }
 
@@ -26,4 +14,17 @@ export interface TextComponentPresenter extends DetailComponentPresenter {
 export interface GeolocationPresenter {
   latitude: number;
   longitude: number;
+}
+
+export interface EventPresenter {
+  id?: string;
+  title: string;
+  description: string;
+  details: DetailComponentPresenter[];
+  capacity: number;
+  location_name: string;
+  geolocation?: GeolocationPresenter;
+  facebook_link?: string;
+  instagram_link?: string;
+  website_link?: string;
 }
