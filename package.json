@@ -4,6 +4,7 @@
   "description": "Backend API for event platform",
   "main": "index.js",
   "scripts": {
+    "preinstall": "./scripts/init-hooks.sh",
     "test": "cross-env NODE_ENV=test jest",
     "compile": "tsc",
     "dev": "nodemon --config nodemon.json src/index.ts",
