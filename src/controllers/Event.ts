@@ -1,13 +1,14 @@
 import { Request, Response } from 'express';
 import { EventCreateRequestBody } from '../bodies/Event';
 import { validateUUID } from '../commons/validators';
+import { RequestFieldInvalid } from '../errors/RequestError';
 
 import { createEvent, getEvent, getEvents } from '../useCases/Event';
 
 export const get = async (request: Request, response: Response) => {
   const { id } = request.params;
   if (!validateUUID(id)) {
-    response.status(400).json({ error: 'REQ_UUID_INV', errorMessage: 'Request UUID invalid' });
+    response.status(400).json(RequestFieldInvalid([{ key: 'uuid', value: id }]));
   } else {
     const event = await getEvent(id);
 
