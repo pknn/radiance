@@ -5,7 +5,7 @@ import { EventModel as Event, ImageComponent, TextComponent, DetailComponent, Te
 import { Selectable } from '../../../persists/events'
 
 const fakeImageComponents = (n: number): ImageComponent[] => {
-    let imageComponents: ImageComponent[] = []
+    const imageComponents: ImageComponent[] = []
     for (let _ = 0; _ < n; _++) {
         imageComponents.push(new ImageComponent(Faker.image.imageUrl()))
     }
@@ -14,7 +14,7 @@ const fakeImageComponents = (n: number): ImageComponent[] => {
 
 const fakeTextComponents = (n: number): TextComponent[] => {
     const textComponentStyles: TextComponentStyle[] = ["heading", "subheading", "body", "quote"]
-    let textComponents: TextComponent[] = []
+    const textComponents: TextComponent[] = []
     for (let _ = 0; _ < n; _++) {
         textComponents.push(new TextComponent(Faker.random.arrayElement(textComponentStyles), Faker.lorem.paragraph()))
     }
@@ -28,7 +28,7 @@ export const fakeEvent = (): Event => {
     return new Event(
         Faker.lorem.lines(),
         Faker.lorem.lines(),
-        (<DetailComponent[]>imageComponents).concat(textComponents),
+        (imageComponents as DetailComponent[]).concat(textComponents),
         Faker.random.number(),
         Faker.address.streetName(),
         {
@@ -45,13 +45,13 @@ export const fakeEventPersistModel = (): Selectable => {
     const imageComponents = fakeImageComponents(Faker.random.number())
     const textComponents = fakeTextComponents(Faker.random.number())
 
-    const details = JSON.stringify((<DetailComponent[]>imageComponents).concat(textComponents))
+    const details = JSON.stringify((imageComponents as DetailComponent[]).concat(textComponents))
 
     return {
         id: Faker.random.uuid(),
         title: Faker.lorem.lines(),
         description: Faker.lorem.lines(),
-        details: details,
+        details,
         location_name: Faker.address.streetName(),
         capacity: Faker.random.number(),
         latitude: parseFloat(Faker.address.latitude()),
@@ -88,7 +88,7 @@ export const fakeEventCreateRequestBody = (): EventCreateRequestBody => {
     return {
         title: Faker.lorem.lines(),
         description: Faker.lorem.lines(),
-        details: (<DetailComponentRequestBody[]>imageComponentRequestBodies).concat(textComponentRequestBodies),
+        details: (imageComponentRequestBodies as DetailComponentRequestBody[]).concat(textComponentRequestBodies),
         location_name: Faker.address.streetName(),
         capacity: Faker.random.number(),
         geolocation: {
