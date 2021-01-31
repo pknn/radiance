@@ -1,16 +1,21 @@
 import { Request, Response } from 'express';
 import { EventCreateRequestBody } from '../bodies/Event';
+import { validateUUID } from '../commons/validators';
 
 import { createEvent, getEvent, getEvents } from '../useCases/Event';
 
 export const get = async (request: Request, response: Response) => {
   const { id } = request.params;
-  const event = await getEvent(id);
-
-  if (!event) {
-    response.sendStatus(404);
+  if (!validateUUID(id)) {
+    response.status(400).json({ error: 'REQ_UUID_INV', errorMessage: 'Request UUID invalid' });
   } else {
-    response.json(event.toPresenter());
+    const event = await getEvent(id);
+
+    if (!event) {
+      response.sendStatus(404);
+    } else {
+      response.json(event.toPresenter());
+    }
   }
 };
 

@@ -1,3 +1,5 @@
+import { v4 as uuid } from 'uuid';
+
 import { EventCreateRequestBody } from '../bodies/Event';
 import { Insertable, Selectable } from '../persists/events';
 import {
@@ -49,6 +51,8 @@ export interface Geolocation {
 }
 
 export class EventModel {
+  id: string
+
   title: string;
 
   description: string;
@@ -68,6 +72,7 @@ export class EventModel {
   websiteLink?: string;
 
   constructor(
+    id: string,
     title: string,
     description: string,
     details: DetailComponent[],
@@ -78,6 +83,7 @@ export class EventModel {
     instagramLink?: string,
     websiteLink?: string,
   ) {
+    this.id = id;
     this.title = title;
     this.description = description;
     this.details = details;
@@ -91,6 +97,7 @@ export class EventModel {
 
   toPersistModel(): Insertable {
     return {
+      id: this.id,
       title: this.title,
       description: this.description,
       details: JSON.stringify(this.details),
@@ -106,6 +113,7 @@ export class EventModel {
 
   toPresenter(): EventPresenter {
     return {
+      id: this.id,
       title: this.title,
       description: this.description,
       details: this.details.map((detail) => detail.toPresenter()),
@@ -121,6 +129,7 @@ export class EventModel {
   static fromPersistModel(event?: Selectable): EventModel | undefined {
     if (!event) return undefined;
     return new EventModel(
+      event.id,
       event.title,
       event.description,
       JSON.parse(event.details),
@@ -137,6 +146,7 @@ export class EventModel {
 
   static fromCreateRequestBody(requestBody: EventCreateRequestBody): EventModel {
     return new EventModel(
+      uuid(),
       requestBody.title,
       requestBody.description,
       requestBody.details.map((detail) => detail.toDetailComponent()),

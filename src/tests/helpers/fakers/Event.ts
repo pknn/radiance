@@ -35,14 +35,15 @@ const fakeTextComponents = (n: number): TextComponent[] => {
 };
 
 export const fakeEvent = (): Event => {
-  const imageComponents = fakeImageComponents(Faker.random.number());
-  const textComponents = fakeTextComponents(Faker.random.number());
+  const imageComponents = fakeImageComponents(Faker.random.number(10));
+  const textComponents = fakeTextComponents(Faker.random.number(10));
 
   return new Event(
+    Faker.random.uuid(),
     Faker.lorem.lines(),
     Faker.lorem.lines(),
     (imageComponents as DetailComponent[]).concat(textComponents),
-    Faker.random.number(),
+    Faker.random.number(10),
     Faker.address.streetName(),
     {
       latitude: parseFloat(Faker.address.latitude()),
@@ -55,8 +56,8 @@ export const fakeEvent = (): Event => {
 };
 
 export const fakeEventPersistModel = (): Selectable => {
-  const imageComponents = fakeImageComponents(Faker.random.number());
-  const textComponents = fakeTextComponents(Faker.random.number());
+  const imageComponents = fakeImageComponents(Faker.random.number(10));
+  const textComponents = fakeTextComponents(Faker.random.number(10));
 
   const details = JSON.stringify((imageComponents as DetailComponent[]).concat(textComponents));
 
@@ -66,7 +67,7 @@ export const fakeEventPersistModel = (): Selectable => {
     description: Faker.lorem.lines(),
     details,
     location_name: Faker.address.streetName(),
-    capacity: Faker.random.number(),
+    capacity: Faker.random.number(10),
     latitude: parseFloat(Faker.address.latitude()),
     longitude: parseFloat(Faker.address.longitude()),
     facebook_link: Faker.internet.url(),
@@ -77,7 +78,7 @@ export const fakeEventPersistModel = (): Selectable => {
 
 const fakeImageComponentRequestBodies = (n: number): ImageComponentRequestBody[] => {
   const imageComponentsRequestBodies: ImageComponentRequestBody[] = [];
-  for (let _ = 0; _ < n; _++) {
+  for (let _ = 0; _ < n; _ += 1) {
     imageComponentsRequestBodies.push(new ImageComponentRequestBody(Faker.image.imageUrl()));
   }
 
@@ -101,9 +102,9 @@ const fakeTextComponentRequestBodies = (n: number): TextComponentRequestBody[] =
 
 export const fakeEventCreateRequestBody = (): EventCreateRequestBody => {
   const imageComponentRequestBodies
-  : ImageComponentRequestBody[] = fakeImageComponentRequestBodies(Faker.random.number());
+  : ImageComponentRequestBody[] = fakeImageComponentRequestBodies(Faker.random.number(10));
   const textComponentRequestBodies
-  : TextComponentRequestBody[] = fakeTextComponentRequestBodies(Faker.random.number());
+  : TextComponentRequestBody[] = fakeTextComponentRequestBodies(Faker.random.number(10));
 
   return {
     title: Faker.lorem.lines(),
@@ -111,7 +112,7 @@ export const fakeEventCreateRequestBody = (): EventCreateRequestBody => {
     details: (imageComponentRequestBodies as DetailComponentRequestBody[])
       .concat(textComponentRequestBodies),
     location_name: Faker.address.streetName(),
-    capacity: Faker.random.number(),
+    capacity: Faker.random.number(10),
     geolocation: {
       latitude: parseFloat(Faker.address.latitude()),
       longitude: parseFloat(Faker.address.longitude()),

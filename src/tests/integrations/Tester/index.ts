@@ -3,9 +3,10 @@ import Supertest, {
   Test,
   Request as SuperTestRequest,
   Response as SuperTestResponse,
+// eslint-disable-next-line import/no-extraneous-dependencies
 } from 'supertest';
 
-import { App } from '../../../configs';
+import App from '../../../configs';
 
 class Tester {
   api: SuperTest<Test>;

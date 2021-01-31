@@ -11,6 +11,7 @@ describe('Event', () => {
       const eventPersistModel: EventPersistModel = fakeEventPersistModel();
       const eventModel: Event | undefined = Event.fromPersistModel(eventPersistModel);
       expect(eventModel).toBeDefined();
+      expect(eventModel?.id).toEqual(eventPersistModel.id);
       expect(eventModel?.title).toEqual(eventPersistModel.title);
       expect(eventModel?.description).toEqual(eventPersistModel.description);
       expect(eventModel?.details).toHaveLength(

@@ -17,6 +17,7 @@ export interface GeolocationPresenter {
 }
 
 export interface EventPresenter {
+  id?: string;
   title: string;
   description: string;
   details: DetailComponentPresenter[];
