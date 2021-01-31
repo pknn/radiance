@@ -1,4 +1,5 @@
 import Faker from 'faker'
+import { DetailComponentRequestBody, EventCreateRequestBody, ImageComponentRequestBody, TextComponentRequestBody } from '../../../bodies/Event'
 
 import { EventModel as Event, ImageComponent, TextComponent, DetailComponent, TextComponentStyle } from '../../../models/Event'
 import { Selectable } from '../../../persists/events'
@@ -55,6 +56,45 @@ export const fakeEventPersistModel = (): Selectable => {
         capacity: Faker.random.number(),
         latitude: parseFloat(Faker.address.latitude()),
         longitude: parseFloat(Faker.address.longitude()),
+        facebook_link: Faker.internet.url(),
+        instagram_link: Faker.internet.url(),
+        website_link: Faker.internet.url()
+    }
+}
+
+const fakeImageComponentRequestBodies = (n: number): ImageComponentRequestBody[] => {
+    const imageComponentsRequestBodies: ImageComponentRequestBody[] = []
+    for (let _ = 0; _ < n; _++) {
+        imageComponentsRequestBodies.push(new ImageComponentRequestBody(Faker.image.imageUrl()))
+    }
+
+    return imageComponentsRequestBodies
+}
+
+const fakeTextComponentRequestBodies = (n: number): TextComponentRequestBody[] => {
+    const textComponentsRequestBodies: TextComponentRequestBody[] = []
+    const textComponentStyles: TextComponentStyle[] = ["heading", "subheading", "body", "quote"]
+    for (let _ = 0; _ < n; _++) {
+        textComponentsRequestBodies.push(new TextComponentRequestBody(Faker.random.arrayElement(textComponentStyles), Faker.lorem.lines()))
+    }
+
+    return textComponentsRequestBodies
+}
+
+export const fakeEventCreateRequestBody = (): EventCreateRequestBody => {
+    const imageComponentRequestBodies: ImageComponentRequestBody[] = fakeImageComponentRequestBodies(Faker.random.number())
+    const textComponentRequestBodies: TextComponentRequestBody[] = fakeTextComponentRequestBodies(Faker.random.number())
+
+    return {
+        title: Faker.lorem.lines(),
+        description: Faker.lorem.lines(),
+        details: (<DetailComponentRequestBody[]>imageComponentRequestBodies).concat(textComponentRequestBodies),
+        location_name: Faker.address.streetName(),
+        capacity: Faker.random.number(),
+        geolocation: {
+            latitude: parseFloat(Faker.address.latitude()),
+            longitude: parseFloat(Faker.address.longitude()),
+        },
         facebook_link: Faker.internet.url(),
         instagram_link: Faker.internet.url(),
         website_link: Faker.internet.url()

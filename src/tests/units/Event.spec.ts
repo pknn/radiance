@@ -1,8 +1,9 @@
-import { fakeEvent, fakeEventPersistModel } from '../helpers/fakers/Event'
+import { fakeEvent, fakeEventCreateRequestBody, fakeEventPersistModel } from '../helpers/fakers/Event'
 import { Selectable as EventPersistModel } from '../../persists/events'
 import { EventModel as Event } from '../../models/Event'
 import { JSONArray } from 'zapatos/db'
 import { EventPresenter } from '../../presenters/Event'
+import { EventCreateRequestBody } from '../../bodies/Event'
 
 describe('Event', () => {
     describe('Event.fromPersistModel()', () => {
@@ -34,6 +35,21 @@ describe('Event', () => {
             expect(eventPresenter.facebook_link).toEqual(eventModel.facebookLink)
             expect(eventPresenter.instagram_link).toEqual(eventModel.instagramLink)
             expect(eventPresenter.website_link).toEqual(eventModel.websiteLink)
+        })
+    })
+
+    describe('Event.fromCreateRequestBody', () => {
+        it('should map from create request body to model correctly', () => {
+            const eventCreateRequestBody: EventCreateRequestBody = fakeEventCreateRequestBody()
+            const event: Event = Event.fromCreateRequestBody(eventCreateRequestBody)
+            expect(event.title).toEqual(eventCreateRequestBody.title)
+            expect(event.description).toEqual(eventCreateRequestBody.description)
+            expect(event.details).toHaveLength(eventCreateRequestBody.details.length)
+            expect(event.locationName).toEqual(eventCreateRequestBody.location_name)
+            expect(event.geolocation).toEqual(eventCreateRequestBody.geolocation)
+            expect(event.facebookLink).toEqual(eventCreateRequestBody.facebook_link)
+            expect(event.instagramLink).toEqual(eventCreateRequestBody.instagram_link)
+            expect(event.websiteLink).toEqual(eventCreateRequestBody.website_link)
         })
     })
 })
